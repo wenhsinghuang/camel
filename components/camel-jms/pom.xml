@@ -24,7 +24,7 @@
     <parent>
         <groupId>org.apache.camel</groupId>
         <artifactId>components</artifactId>
-        <version>3.20.0-SNAPSHOT</version>
+        <version>4.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>camel-jms</artifactId>
@@ -34,8 +34,6 @@
     <description>Camel JMS support</description>
 
     <properties>
-        <camel.osgi.export.pkg>org.apache.camel.component.jms*</camel.osgi.export.pkg>
-        <camel.osgi.import.additional>javax.jms;version="[1.1,3)"</camel.osgi.import.additional>
 
         <camel.surefire.reuseForks>true</camel.surefire.reuseForks>
         <camel.surefire.forkCount>1</camel.surefire.forkCount>
@@ -72,8 +70,8 @@
         <!-- either use JMS 1.1 or 2.0 provided by JMS client -->
         <!-- here we use JMS 2.0 API but using JMS 1.1 should work as well -->
         <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-jms_2.0_spec</artifactId>
+            <groupId>jakarta.jms</groupId>
+            <artifactId>jakarta.jms-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>

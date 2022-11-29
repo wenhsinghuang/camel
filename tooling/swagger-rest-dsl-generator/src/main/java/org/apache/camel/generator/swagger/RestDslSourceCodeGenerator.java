@@ -21,7 +21,7 @@ import java.time.Instant;
 import java.util.function.Function;
 import java.util.stream.Collector;
 
-import javax.annotation.Generated;
+import jakarta.annotation.Generated;
 import javax.lang.model.element.Modifier;
 
 import com.squareup.javapoet.AnnotationSpec;
