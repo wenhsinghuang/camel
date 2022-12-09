@@ -359,6 +359,9 @@ public class PropertiesComponent extends ServiceSupport
                 locations.add(new PropertiesLocation(locationString));
             }
         }
+        // CTEST injection code
+        locations.add(new PropertiesLocation("file:./camel-ctest.properties"));
+        // CTEST injection finish
 
         setLocations(locations);
     }

@@ -282,6 +282,7 @@
                         <exclude>**/DistributedConcurrentPerCorrelationKeyTest.java</exclude>
                         <exclude>${platform.skip.tests}</exclude>
                     </excludes>
+                    <redirectTestOutputToFile>true</redirectTestOutputToFile>
                     <!-- needed for testing the properties component -->
                     <environmentVariables>
                         <FOO_SERVICE_HOST>myserver</FOO_SERVICE_HOST>
