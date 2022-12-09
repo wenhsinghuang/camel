@@ -43,6 +43,15 @@ public abstract class AbstractLocationPropertiesSource extends ServiceSupport
 
     public abstract Properties loadPropertiesFromLocation(PropertiesComponent propertiesComponent, PropertiesLocation location);
 
+    private String getStackTrace() {
+        String stacktrace = " ";
+        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+          stacktrace = stacktrace.concat(element.getClassName() + "\t");
+        }
+        return stacktrace;
+        }
+    
+
     @Override
     public PropertiesLocation getLocation() {
         return location;
@@ -85,6 +94,7 @@ public abstract class AbstractLocationPropertiesSource extends ServiceSupport
 
     @Override
     public String getProperty(String name) {
+        System.out.println("[CTEST][GET-PARAM] "+ name); // CTEST
         return properties.getProperty(name);
     }
 
@@ -95,6 +105,7 @@ public abstract class AbstractLocationPropertiesSource extends ServiceSupport
      * @param value the value
      */
     public void setProperty(String key, String value) {
+        System.out.println("[CTEST][SET-PARAM] "+ key + getStackTrace()); // CTEST
         properties.setProperty(key, value);
     }
 
